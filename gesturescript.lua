@@ -12,22 +12,22 @@ roll = 0
 pitch = 0
 yaw = 0
 
-function onPoseEdge(pose, edge)
-    myo.debug("onPoseEdge: " .. pose .. ", " .. edge)
-end
-
-function onPeriodic()
-end
-
-function onForegroundWindowChange(app, title)
-    --myo.debug("onForegroundWindowChange: " .. app .. ", " .. title)
-    return true
-end
-
-function activeAppName()
-    return "Output Everything"
-end
+function hello()
+	io.write("Hello")
+end	
 
 function onActiveChange(isActive)
-    myo.debug("onActiveChange I'm joel")
+	roll = getYaw()
+	pitch = getPitch()
+	yaw = myo.getYaw()
+end		
+
+
+function onPoseEdge(pose, edge)
+
+	if pitch > math.pi/4 and myo.pose() == "fingersSpread" and myo.getYaw() != yaw 
+		debug("hello")
+	end
+	
+	end
 end
