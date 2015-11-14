@@ -8,6 +8,9 @@ scriptDetailsUrl = ""
 --function hello()
 --myo.debug("FIST PRINTED")
 --end
+roll = 0
+pitch = 0
+yaw = 0
 
 function onPoseEdge(pose, edge)
     myo.debug("onPoseEdge: " .. pose .. ", " .. edge)
