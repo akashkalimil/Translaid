@@ -20,7 +20,7 @@ function onPoseEdge(pose, edge)
 		myo.debug("Thank You")
 		myo.keyboard("n","press")
 	end
-	if edge == "on" and pose == "waveOut" and pitch < .5 then
+	if edge == "on" and pose == "waveOut" and pitch < .5 and yaw > -1.25 then
 		myo.debug("Hello")
 		myo.keyboard("a","press")
 	end
@@ -32,7 +32,7 @@ function onPoseEdge(pose, edge)
 		myo.debug("where is the closest restaurant?")
 		myo.keyboard("c","press")
 	end
-	if edge == "on" and pose == "waveOut" and pitch > .5 then
+	if edge == "on" and pose == "waveOut" and pitch > .5 and yaw > -1.5 then
 		myo.debug("Can you help find _")
 		myo.keyboard("k","press")
 	end
@@ -59,6 +59,7 @@ end
 
 function onPeriodic()
 	--myo.debug(myo.getPitch())
+	myo.debug(myo.getYaw())
 end
 
 function onForegroundWindowChange(app, title)
