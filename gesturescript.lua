@@ -36,11 +36,11 @@ function onPoseEdge(pose, edge)
 		myo.debug("Do You Speak English")
 		myo.keyboard("a","press")
 	end
-	if edge == "on" and pose == "fingerSpread" and pitch < .5 then
+	if edge == "on" and pose == "fingersSpread" and pitch < .5 then
 		myo.debug("How do I get?")
 		myo.keyboard("k","press")
 	end
-	if edge == "on" and pose == "fingerSpread" and pitch > .5 then
+	if edge == "on" and pose == "fingersSpread" and pitch > .5 then
 		myo.debug("I need Help")
 		myo.keyboard("d","press")
 	end
@@ -72,4 +72,4 @@ end
 
 --function onActiveChange(isActive)
     --myo.debug("onActiveChange")
---end
+--enda
