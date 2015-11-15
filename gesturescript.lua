@@ -12,45 +12,62 @@ function onPoseEdge(pose, edge)
 	yaw = myo.getYaw()
 	
     pi = math.pi
-	if edge == "on" and pose == "fist" and pitch < .5 then
-		myo.debug("What time is it?")
+	if edge == "on" and pose == "fist" and pitch < 0 then--r
+		myo.debug("What is the time?")
 		myo.keyboard("h","press")
-	end
-	if edge == "on" and pose == "waveIn" and pitch < .5 then
+		myo.keyboard("return","press")
+	elseif edge == "on" and pose == "fist" and pitch < .5 and pitch >= 0 then --q
+		myo.debug("What is your name?")
+		myo.keyboard("e","press")
+		myo.keyboard("return","press")
+	elseif edge == "on" and pose == "fist" and pitch > .5 then --g
 		myo.debug("Thank You")
 		myo.keyboard("n","press")
-	end
-	if edge == "on" and pose == "waveOut" and pitch < .5 and yaw > -1.25 then
-		myo.debug("Hello")
-		myo.keyboard("a","press")
-	end
-	if edge == "on" and pose == "fist" and pitch > .5 then
+		myo.keyboard("return","press")
+	elseif edge == "on" and pose == "waveOut" and pitch < .5 and pitch >= 0 then --s
+		myo.debug("Do You Speak English?")
+		myo.keyboard("g","press")
+		myo.keyboard("return","press")
+	elseif edge == "on" and pose == "fingersSpread" and pitch > .5 then --t
+		myo.debug("Do you have a phone?")
+		myo.keyboard("h","press")
+		myo.keyboard("return","press")
+	elseif edge == "on" and pose == "waveIn" and pitch < 0 then --o
 		myo.debug("Where is the washroom?")
 		myo.keyboard("i","press")
-	end
-	if edge == "on" and pose == "waveIn" and pitch > .5 then
-		myo.debug("where is the closest restaurant?")
-		myo.keyboard("c","press")
-	end
-	if edge == "on" and pose == "waveOut" and pitch > .5 and yaw > -1.5 then
-		myo.debug("Can you help find _")
+		myo.keyboard("return","press")
+	elseif edge == "on" and pose == "waveIn" and pitch > .5 then --i
+		myo.debug("Sorry")
 		myo.keyboard("k","press")
-	end
-	if edge == "on" and pose == "fingersSpread" and pitch < .5 then
-		myo.debug("Where is the closest bus station?")
+		myo.keyboard("return","press")
+	elseif edge == "on" and pose == "waveOut" and pitch < 0 then --h
+		myo.debug("Excuse me")
+		myo.keyboard("j","press")
+		myo.keyboard("return","press")
+	elseif edge == "on" and pose == "fingersSpread" and pitch < 0 then --m
+		myo.debug("Where is the closest restaurant?")
+		myo.keyboard("c","press")
+		myo.keyboard("return","press")
+	elseif edge == "on" and pose == "fingersSpread" and pitch < .5 and pitch >= 0 then --n
+		myo.debug("the closest bus station?")
 		myo.keyboard("f","press")
-	end
-	if edge == "on" and pose == "fingersSpread" and pitch > .5 then
+		myo.keyboard("return","press")
+	elseif edge == "on" and pose == "waveIn" and pitch < .5 and pitch >= 0 then --d
 		myo.debug("I need help, call 9-1-1")
 		myo.keyboard("d","press")
-	end
-	if edge == "on" and pose == "doubleTap" and pitch < .5 then
+		myo.keyboard("return","press")
+	elseif edge == "on" and pose == "doubleTap" and pitch < .5 and pitch >= 0 then --f
 		myo.debug("Goodbye")
 		myo.keyboard("b","press")
-	end
-	if edge == "on" and pose == "doubleTap" and pitch > .5 then
+		myo.keyboard("return","press")
+	elseif edge == "on" and pose == "doubleTap" and pitch > .5 then --l
 		myo.debug("I love Digiflare")
 		myo.keyboard("p","press")
+		myo.keyboard("return","press")
+	elseif edge == "on" and pose == "waveOut" and pitch < 0 then --e
+		myo.debug("Hello")
+		myo.keyboard("a","press")
+		myo.keyboard("return","press")
 	end
 end
 
@@ -59,7 +76,6 @@ end
 
 function onPeriodic()
 	--myo.debug(myo.getPitch())
-	myo.debug(myo.getYaw())
 end
 
 function onForegroundWindowChange(app, title)
@@ -73,4 +89,4 @@ end
 
 --function onActiveChange(isActive)
     --myo.debug("onActiveChange")
---enda
+--end
