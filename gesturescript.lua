@@ -37,12 +37,12 @@ function onPoseEdge(pose, edge)
 		myo.keyboard("k","press")
 	end
 	if edge == "on" and pose == "fingersSpread" and pitch < .5 then
-		myo.debug("How do I get?")
-		myo.keyboard("k","press")
-	end
-	if edge == "on" and pose == "fingersSpread" and pitch > .5 then
 		myo.debug("Where is the closest bus station?")
 		myo.keyboard("f","press")
+	end
+	if edge == "on" and pose == "fingersSpread" and pitch > .5 then
+		myo.debug("I need help, call 9-1-1")
+		myo.keyboard("d","press")
 	end
 	if edge == "on" and pose == "doubleTap" and pitch < .5 then
 		myo.debug("Goodbye")
@@ -55,7 +55,7 @@ function onPoseEdge(pose, edge)
 end
 
 
---waveIn, waveOut, fist, doubleTap, fingersSpread, rest and unknown. rest
+--waveInk, waveOut, fist, doubleTap, fingersSpread, rest and unknown. rest
 
 function onPeriodic()
 	--myo.debug(myo.getPitch())
