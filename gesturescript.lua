@@ -59,7 +59,7 @@ end
 
 function onPeriodic()
 	--myo.debug(myo.getPitch())
-	myo.debug(myo.getYaw())
+	--myo.debug(myo.getYaw())
 end
 
 function onForegroundWindowChange(app, title)
