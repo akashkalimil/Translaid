@@ -28,10 +28,10 @@ function onPoseEdge(pose, edge)
 		myo.debug("Do You Speak English?")
 		myo.keyboard("g","press")
 		myo.keyboard("return","press")
-	elseif edge == "on" and pose == "fingersSpread" and pitch > .5 then --t
-		myo.debug("Do you have a phone?")
-		myo.keyboard("h","press")
-		myo.keyboard("return","press")
+	--elseif edge == "on" and pose == "fingersSpread" and pitch > .5 then --t
+	--	myo.debug("Do you have a phone?")
+	--	myo.keyboard("h","press")
+	--	myo.keyboard("return","press")
 	elseif edge == "on" and pose == "waveIn" and pitch < 0 then --o
 		myo.debug("Where is the washroom?")
 		myo.keyboard("i","press")
