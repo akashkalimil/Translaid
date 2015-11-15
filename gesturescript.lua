@@ -49,7 +49,7 @@ function onPoseEdge(pose, edge)
 		myo.keyboard("c","press")
 		myo.keyboard("return","press")
 	elseif edge == "on" and pose == "fingersSpread" and pitch < .5 and pitch >= 0 then --n
-		myo.debug("the closest bus station?")
+		myo.debug("where is the closest bus station?")
 		myo.keyboard("f","press")
 		myo.keyboard("return","press")
 	elseif edge == "on" and pose == "waveIn" and pitch < .5 and pitch >= 0 then --d
