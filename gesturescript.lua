@@ -37,7 +37,7 @@ function onPoseEdge(pose, edge)
 		myo.keyboard("i","press")
 		myo.keyboard("return","press")
 	elseif edge == "on" and pose == "waveIn" and pitch > .5 then --i
-		myo.debug("Sorry")
+			myo.debug("Sorry")
 		myo.keyboard("k","press")
 		myo.keyboard("return","press")
 	elseif edge == "on" and pose == "waveOut" and pitch < 0 then --h
@@ -64,7 +64,7 @@ function onPoseEdge(pose, edge)
 		myo.debug("I love Digiflare")
 		myo.keyboard("p","press")
 		myo.keyboard("return","press")
-	elseif edge == "on" and pose == "waveOut" and pitch < 0 then --e
+	elseif edge == "on" and pose == "waveOut" and pitch > .5 then --e
 		myo.debug("Hello")
 		myo.keyboard("a","press")
 		myo.keyboard("return","press")
