@@ -2,32 +2,51 @@ scriptId = 'com.thalmic.examples.gesturescript'
 scriptTitle = "Gesture script"
 scriptDetailsUrl = ""
 
---file = io.open("words.txt", "a")
---io.output(file)
-
---function hello()
---myo.debug("FIST PRINTED")
---end
-roll = 0
-pitch = 0
-yaw = 0
-
-function hello()
-	io.write("Hello")
-end	
-
-function onActiveChange(isActive)
-	roll = getYaw()
-	pitch = getPitch()
-	yaw = myo.getYaw()
-end		
-
+myo.setLockingPolicy("none")
 
 function onPoseEdge(pose, edge)
-
-	if pitch > math.pi/4 and myo.pose() == "fingersSpread" and myo.getYaw() != yaw 
-		debug("hello")
-	end
-	
-	end
+    --myo.debug("onPoseEdge: " .. pose .. ", " .. edge)
+    pitch = myo.getPitch()
+    roll = myo.getRoll()
+    pi = math.pi
+    if edge == "on" then
+    		if pose == "waveOut" and pitch > pi/6 then
+    			myo.debug("upHELLO")
+    		elseif pose == "waveOut" and pitch < pi/6 then
+    			myo.debug("downHELLO")
+    		elseif pose == "fingersSpread" and pitch < pi/6 and roll < -pi/2 then
+    			myo.debug("How much?")
+    		elseif pose == "waveIn" and pitch > pi/6 then
+    			myo.debug("greater than 45 detected")
+    				myo.debug("FOOD")
+    		elseif pose == "fist" and pitch < pi/6 then
+    			myo.debug("fist")
+    		elseif pose == "doubleTap" and pitch > pi/6 then
+    			myo.debug("dt")
+    	    end
+    	
+    end
 end
+
+
+--waveIn, waveOut, fist, doubleTap, fingersSpread, rest and unknown. rest
+
+function onPeriodic()
+	--myo.debug("roll is: ".. myo.getRoll())
+	--myo.debug("pitch is: ".. myo.getPitch())
+	--myo.debug("yaw is: ".. myo.getYaw())
+end
+
+function onForegroundWindowChange(app, title)
+    --myo.debug("onForegroundWindowChange: " .. app .. ", " .. title)
+    return true
+end
+
+function activeAppName()
+    return "Output Everything"
+end
+
+--function onActiveChange(isActive)
+    --myo.debug("onActiveChange")
+--end
+
